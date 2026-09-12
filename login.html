@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Petition | Login</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    #f6d365,
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    #fda085,
+                    transparent 30%
+                ),
+
+                #fffaf2;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        /* MAIN CONTAINER */
+
+        .main-container {
+
+            width: 900px;
+
+            min-height: 560px;
+
+            display: flex;
+
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(89, 59, 32, 0.15);
+        }
+
+
+        /* LEFT SIDE */
+
+        .left-side {
+
+            width: 48%;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #163832,
+                    #205c50,
+                    #2f7d68
+                );
+
+            color: white;
+
+            padding: 50px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        /* AI ICON */
+
+        .ai-icon {
+
+            width: 72px;
+
+            height: 72px;
+
+            border-radius: 20px;
+
+            background: #f4b942;
+
+            color: #163832;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 34px;
+
+            font-weight: bold;
+
+            margin-bottom: 28px;
+
+            box-shadow:
+                0 10px 25px rgba(244,185,66,0.3);
+        }
+
+
+        .left-side h1 {
+
+            font-size: 36px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .left-side p {
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            color: #e8f4ef;
+        }
+
+
+        /* FEATURES */
+
+        .features {
+
+            margin-top: 35px;
+        }
+
+
+        .feature {
+
+            display: flex;
+
+            align-items: center;
+
+            margin: 17px 0;
+
+            font-size: 14px;
+
+            color: #f5fffb;
+        }
+
+
+        .feature-icon {
+
+            width: 34px;
+
+            height: 34px;
+
+            background:
+                rgba(255,255,255,0.12);
+
+            border-radius: 10px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            margin-right: 12px;
+
+            color: #f4b942;
+
+            font-weight: bold;
+        }
+
+
+        /* RIGHT SIDE */
+
+        .right-side {
+
+            width: 52%;
+
+            padding: 55px 60px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .right-side h2 {
+
+            font-size: 29px;
+
+            color: #163832;
+
+            margin-bottom: 8px;
+        }
+
+
+        .subtitle {
+
+            color: #7b807c;
+
+            font-size: 14px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* INPUT */
+
+        .input-group {
+
+            margin-bottom: 20px;
+        }
+
+
+        .input-group label {
+
+            display: block;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #34423d;
+
+            margin-bottom: 8px;
+        }
+
+
+        .input-group input {
+
+            width: 100%;
+
+            height: 48px;
+
+            padding: 0 14px;
+
+            border: 1px solid #d8ddd9;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+
+        .input-group input:focus {
+
+            border-color: #2f7d68;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(47,125,104,0.12);
+        }
+
+
+        /* PASSWORD HEADER */
+
+        .password-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .forgot {
+
+            color: #2f7d68;
+
+            font-size: 12px;
+
+            cursor: pointer;
+        }
+
+
+        /* LOGIN BUTTON */
+
+        .login-btn {
+
+            width: 100%;
+
+            height: 49px;
+
+            border: none;
+
+            border-radius: 9px;
+
+            background: #f4b942;
+
+            color: #163832;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 5px;
+
+            transition: 0.2s;
+        }
+
+
+        .login-btn:hover {
+
+            background: #e5aa35;
+
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 8px 18px
+                rgba(244,185,66,0.25);
+        }
+
+
+        /* MESSAGE */
+
+        #message {
+
+            text-align: center;
+
+            margin-top: 12px;
+
+            font-size: 13px;
+
+            color: #c0392b;
+        }
+
+
+        /* CREATE ACCOUNT */
+
+        .signup {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #7b807c;
+
+            font-size: 13px;
+        }
+
+
+        .signup span {
+
+            color: #2f7d68;
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            .main-container {
+
+                width: 95%;
+            }
+
+
+            .left-side {
+
+                display: none;
+            }
+
+
+            .right-side {
+
+                width: 100%;
+
+                padding: 45px 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="main-container">
+
+
+    <!-- LEFT SIDE -->
+
+    <div class="left-side">
+
+
+        <!-- UNIQUE ICON -->
+
+        <div class="ai-icon">
+            ✦
+        </div>
+
+
+        <h1>
+            AI Petition
+        </h1>
+
+
+        <p>
+
+            A smarter way to submit,
+            manage and track petitions
+            with intelligent AI-powered
+            assistance.
+
+        </p>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    +
+                </div>
+
+                Easy Petition Submission
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ◈
+                </div>
+
+                Intelligent AI Analysis
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ↗
+                </div>
+
+                Real-Time Status Tracking
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                Secure Management
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="right-side">
+
+
+        <h2>
+            Welcome Back
+        </h2>
+
+
+        <p class="subtitle">
+            Sign in to continue to your account
+        </p>
+
+
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+            <label>
+                Email Address
+            </label>
+
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+            >
+
+        </div>
+
+
+
+        <!-- PASSWORD -->
+
+        <div class="input-group">
+
+
+            <div class="password-header">
+
+                <label>
+                    Password
+                </label>
+
+
+                <span
+                    class="forgot"
+                    onclick="forgotPassword()"
+                >
+                    Forgot password?
+                </span>
+
+            </div>
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+
+        </div>
+
+
+
+        <!-- LOGIN -->
+
+        <button
+            class="login-btn"
+            onclick="loginUser()"
+        >
+
+            Sign In
+
+        </button>
+
+
+        <p id="message"></p>
+
+
+
+        <!-- CREATE ACCOUNT -->
+
+        <div class="signup">
+
+            Don't have an account?
+
+            <span onclick="createAccount()">
+                Create account
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+function loginUser() {
+
+    let email =
+        document.getElementById("email").value;
+
+
+    let password =
+        document.getElementById("password").value;
+
+
+    if (email === "" || password === "") {
+
+        document.getElementById("message").innerHTML =
+            "Please enter Email and Password.";
+
+        return;
+    }
+
+
+    // Login successful
+
+    window.location.href = "home.html";
+
+}
+
+
+
+function forgotPassword() {
+
+    alert(
+        "Password recovery will be available soon."
+    );
+
+}
+
+
+
+function createAccount() {
+
+    alert(
+        "Registration page will be available soon."
+    );
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
